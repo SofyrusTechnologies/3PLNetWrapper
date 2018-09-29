@@ -9,3 +9,5 @@
 /3PL.Net/3PL.Net.csproj.user
 /3PL.Net.Tests/bin/Debug/netcoreapp2.1
 /3PL.Net.Tests/obj
+/3PL.Net/bin
+/3PL.Net.Tests/bin/Release/netcoreapp2.1

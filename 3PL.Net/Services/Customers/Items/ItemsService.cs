@@ -12,6 +12,7 @@ namespace _3PL.Net.Services.Customers.Items
     public class ItemsService : IItemsService
     {
         private readonly string itemEndPoint = @"/customers/{0}/items";//with placeholder for customerId
+        private readonly string itemEndPointWithPageQuery = @"/customers/{0}/items?pgsiz={1}&pgnum={2}";
 
         public void Delete(int Id, int customerId, string accessToken)
         {
@@ -34,8 +35,10 @@ namespace _3PL.Net.Services.Customers.Items
                 throw new ArgumentNullException(nameof(accessToken), Constants.MissingAccessTokenMessage);
             if (customerId == 0)
                 throw new ArgumentException(Constants.MissingCustomerIdMessage);
+
             var restclient = new RestClient(Constants.BaseUrl);
-            RestRequest request = new RestRequest(string.Format(itemEndPoint, customerId)) { Method = Method.GET };
+            string itemsUrl = criteria != null && criteria.PageNumber > 0 ? string.Format(itemEndPointWithPageQuery, customerId, criteria.PageSize, criteria.PageNumber) : string.Format(itemEndPoint, customerId);
+            RestRequest request = new RestRequest(itemsUrl) { Method = Method.GET };
             request.AddCommonHeaders(accessToken);
 
             var tResponse = restclient.Execute(request);

@@ -3,6 +3,23 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>_3PL.Net</RootNamespace>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Authors>‎bilal</Authors>
+    <Company>Sofyrus Technology Pvt. Ltd</Company>
+    <RepositoryUrl>https://github.com/Sofyrus/3PLNetWrapper</RepositoryUrl>
+    <Product>3PL.Net Wrapper</Product>
+    <RepositoryType>public</RepositoryType>
+    <PackageTags>3pl central</PackageTags>
+    <Description>A C# .net wrapper for 3PL restAPI http://api.3plcentral.com/rels/billboard
+
+Developed on .Net Core 2.0 Currently Covers a limited set of REST API if people are looking for a wider support feel free to mail or open an issue Covered End points;
+
+http://api.3plcentral.com/rels/customers/items
+http://api.3plcentral.com/rels/orders/orders
+http://api.3plcentral.com/rels/inventory/stocksummaries
+http://api.3plcentral.com/rels/inventory/stockdetails</Description>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
